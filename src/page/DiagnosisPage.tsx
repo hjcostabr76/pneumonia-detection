@@ -1,4 +1,4 @@
-import * as examEnum from './enum_image_exam'
+import * as examEnum from '../enum_image_exam'
 import { Alert } from 'antd'
 
 interface IDiagnosisPageProps {

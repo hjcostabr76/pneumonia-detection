@@ -1,7 +1,7 @@
 import './App.css';
 import 'antd/dist/antd.css'
-import { UploadPage } from './UploadPage';
-import { DiagnosisPage } from './DiagnosisPage';
+import { UploadPage } from './page/UploadPage';
+import { DiagnosisPage } from './page/DiagnosisPage';
 import { useState } from 'react'
 import * as examEnum from './enum_image_exam'
 

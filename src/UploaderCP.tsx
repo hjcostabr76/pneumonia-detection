@@ -18,9 +18,6 @@ interface IUploaderCPProps {
 	onUploadSuccess: (imgName: string, isHealthy: boolean) => void
 }
 
-/**
- * TODO: 2022-07-20 - ADD Descricao
- */
 export function UploaderCP(props: IUploaderCPProps): JSX.Element {
 
 	const [uploadStatus, setUploadStatus] = useState<UploadStatusT>('stopped')
