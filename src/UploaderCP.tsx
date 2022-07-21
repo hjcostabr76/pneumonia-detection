@@ -15,7 +15,7 @@ const isUploadFinished = (status: UploadStatusT) =>
 	(['success', 'failure'] as UploadStatusT[]).includes(status)
 
 interface IUploaderCPProps {
-	onUploadSuccess: (imgName: string) => void
+	onUploadSuccess: (imgName: string, isHealthy: boolean) => void
 }
 
 /**
@@ -66,7 +66,7 @@ export function UploaderCP(props: IUploaderCPProps): JSX.Element {
 	}
 
 	function onSuccessNotified(): void {
-		props.onUploadSuccess(imgName ?? '')
+		props.onUploadSuccess(imgName ?? '', examEnum.isGood(imgName ?? ''))
 	}
 
 	function onFailureNotified(): void {

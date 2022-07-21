@@ -25,10 +25,9 @@
     line-height: 1.3rem;
 }
 
-main {
+.app > main {
 	display: flex;
     justify-content: center;
-    align-items: center;
     height: 90vh;
     max-height: 600px;
     min-height: 300px;
@@ -36,6 +35,14 @@ main {
 
 .page {
     flex: 1;
+}
+
+.page.upload {
+    width: 90%;
+    max-width: 930px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .ant-upload-drag-icon svg {
@@ -58,4 +65,63 @@ main {
 	width: 95%;
     max-width: 450px;
     margin-top: 20px;
+}
+
+.page.diagnosis {
+    background: #dfefe6;
+    flex-direction: column;
+    display: flex;
+    border-radius: 4px;
+    max-width: 1500px;
+    width: 95vh;
+    border: 1px solid #aaa;
+    box-shadow: 0px 5px 5px #bbb;
+    margin-top: 5px;
+    justify-content: space-between;
+}
+
+.page.diagnosis header {
+    background-color: #282c34;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.page.diagnosis main {
+    display: flex;
+    max-height: unset;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding-top: 25px;
+}
+
+.page.diagnosis footer {
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    background: #818181;
+    border-top: 2px solid transparent;
+}
+.page.diagnosis footer.error {
+    border-color: #5e5151;
+}
+.page.diagnosis footer.success {
+    border-color: #535e51;
+}
+
+.img_wrapper {
+    margin: 0 5px;
+    border-radius: 3px;
+    width: 50%;
+    border: 1px solid #aaa;
+    box-shadow: 0px 1px 5px #ccc;
+}
+
+.img_wrapper img {
+    width: 100%
 }

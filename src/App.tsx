@@ -1,18 +1,22 @@
 import './App.css';
 import 'antd/dist/antd.css'
 import { UploadPage } from './UploadPage';
+import { DiagnosisPage } from './DiagnosisPage';
 import { useState } from 'react'
+import * as examEnum from './enum_image_exam'
 
-enum PageModeEnum { UPLOAD, RESULT }
+type ModeT = 'upload' | 'report'
 
 function App() {
 
-	const [mode, setMode] = useState<PageModeEnum>(PageModeEnum.UPLOAD)
-	const [imgName, setImgName] = useState<string>()
+	const [mode, setMode] = useState<ModeT>('upload')
+	const [isHealthy, setIsHealthy] = useState<boolean>(false)
+	const [examImage, setExamImage] = useState<string>()
 
-	function onUploadSuccess(img: string): void {
-		setImgName(img)
-		setMode(PageModeEnum.RESULT)
+	function onUploadSuccess(img: string, _isHealthy: boolean): void {
+		setExamImage(img)
+		setMode('report')
+		setIsHealthy(_isHealthy)
 	}
 
 	return (
@@ -23,13 +27,22 @@ function App() {
 
 			<main>
 				{
-					mode === PageModeEnum.UPLOAD &&
+					mode === 'upload' &&
 					<UploadPage onUploadSuccess={onUploadSuccess}/>
 				}
 				
 				{
-					mode === PageModeEnum.RESULT &&
-					<div style={{ color: 'black' }}> aqui virá o diagnóstico para '{imgName}'...</div>
+					mode === 'report' &&
+					<DiagnosisPage
+						examImage={examEnum.toExam(examImage ?? '') ?? ''}
+						reportImage={!isHealthy ? examEnum.toReport(examImage ?? '') : undefined}
+						isHealthy={isHealthy}
+						message={
+							isHealthy
+								? 'A análise artificial não encontrou nenhum indício de anomalia'
+								: 'A análise artificial detectou indícios de alta probabilidade de anomalia no pulmão examinado'
+						}
+					/>
 				}
 			</main>
 		</div>
