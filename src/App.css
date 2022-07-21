@@ -1,0 +1,61 @@
+.app {
+	background-color: #dfdfdf;
+	min-height: 100vh;
+	color: white;
+}
+
+.header {
+	background-color: #282c34;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 10vh;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    line-height: 1px;
+    min-height: 50px;
+    max-height: 80px;
+}
+
+.header span {
+	color: lightgreen;
+    margin-right: 2px;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+}
+
+main {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    max-height: 600px;
+    min-height: 300px;
+}
+
+.page {
+    flex: 1;
+}
+
+.ant-upload-drag-icon svg {
+	fill: lightgreen;
+}
+
+.loaderWrapper {
+	background-color: #9fc59f5e;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 0;
+    flex-direction: column;
+}
+
+.loaderActionWrapper {
+	width: 95%;
+    max-width: 450px;
+    margin-top: 20px;
+}
